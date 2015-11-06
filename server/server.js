@@ -42,14 +42,15 @@ if (Meteor.isServer) {
   Meteor.publish('dribbbleShots', function() {
 	var _this = this;
 	try {
-	  var response = HTTP.get('https://api.dribbble.com/v1/users/jhonM/followers?access_token=3e8f30d497769f1751d9eab867d96ac6ee0d3e1373ba5eace4894676e87dc483');
-	  	_.each(response.data, function(shot) {
-	  		var shotData = {
-	  			shot_name: shot.follower.name
+	  var response = HTTP.get('https://www.onepercentclub.com/api/bb_projects/previews/?ordering=popularity&page=1&page_size=3&_=1446812641378');
+	  	_.each(response.data.results, function(shot) {
+	  		var projectData = {
+	  			project_name: shot.title,
+	  			amount_donated: shot.amount_donated,
+	  			image: shot.image
 	  		}
 	  		
-	  		_this.added('shots', Random.id(), shotData);
-	  		console.log(shot.follower)
+	  		_this.added('shots', Random.id(), projectData);
 	  	});
 	} catch(error) {
 		console.log(error);
