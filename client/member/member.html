@@ -1,0 +1,12 @@
+<template name="member">
+{{#each member}}
+ <div class="header">
+    <div class="profile-holder">
+        <img src="{{thumb}}" alt=""><br>
+    </div>
+    <p>
+        Hello {{full_name}} ({{user_name}});
+    </p>
+ </div>
+{{/each}}
+</template>
