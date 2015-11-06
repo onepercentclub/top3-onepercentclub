@@ -1,9 +1,9 @@
 <template name="projects">
     {{#each projects}}
     <li class="project-{{@index}}">
-        <img class="image" src="{{image}}" />
-        <strong class="title">{{title}}</strong> 
-        <em class="amount">&euro;{{amount}}</em>
+    		<figure class="image"><img src="{{image}}" /></figure>
+        <strong class="title">{{project_name}}</strong> 
+        <em class="amount">&euro;{{amount_donated}}</em>
     </li>
     {{/each}}
 </template>

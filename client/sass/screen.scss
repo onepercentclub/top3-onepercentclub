@@ -16,15 +16,24 @@ header {
 
 .projects {
 		position: relative;
-		z-index: 1;
     @include clearfix();
     padding: 40px;
     max-width: 1200px;
     margin: 0 auto;
     margin-bottom: 150px;
+    height: 550px;
 
     .image {
-        border-radius: 50%;
+    		display: inline-block;
+				border-radius: 50%;
+				border-radius: 50%;
+				width: 160px;
+				height: 160px;
+				overflow: hidden;
+
+				img {
+					height: 160px;
+				}
     }
     .title {
         display: block;
@@ -32,6 +41,7 @@ header {
         font-size: 22px;
         color: #34ad5b;
         padding: 1em;
+
     }
     .amount {
         font-weight: bold;
@@ -45,7 +55,6 @@ header {
     }
 
     ol {
-    	position: relative;
     	list-style-type: none;
     	text-align: center;
     	width: 100%;
@@ -53,13 +62,13 @@ header {
 
         li {
         		position: absolute;
-            width: 33.33%;
+            width: 34%;
             margin: 0;
             padding: 0;
+            bottom: 0;
         }
     }
     .project-0 {
-    		top: 0;
 				left: 33.33%;
 
 				.amount {
@@ -67,7 +76,6 @@ header {
 				}
     }
     .project-1 {
-        top: 80px;
         left: 0;
 
         .amount {
@@ -76,7 +84,6 @@ header {
     }
 
     .project-2 {
-        top: 160px;
         right: 0;
 
         .amount {
@@ -86,6 +93,7 @@ header {
 }
 
 footer {
+		z-index: -1;
 		width: 100%;
 		position: absolute;
 		top: 700px;

@@ -1,3 +1,3 @@
 if (Meteor.isClient) {
-  Meteor.subscribe('projects');
+  	Projects = new Mongo.Collection('projects');
 }
